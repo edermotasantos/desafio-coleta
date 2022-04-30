@@ -1,0 +1,25 @@
+{
+  "name": "desafio-coleta",
+  "version": "1.0.0",
+  "description": "Desafio Coleta GRX",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/edermotasantos/desafio-coleta.git"
+  },
+  "keywords": [
+    "desafio",
+    "coleta",
+    "node.js",
+    "javascript"
+  ],
+  "author": "Eder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edermotasantos/desafio-coleta/issues"
+  },
+  "homepage": "https://github.com/edermotasantos/desafio-coleta#readme"
+}
