@@ -1,4 +1,5 @@
 const Answers = require('../services/answers');
+const ModelAnswers = require('../models/answers')
 const fs = require('fs');
 
 let last_id = undefined;
@@ -77,11 +78,24 @@ const create = async (req, res) => {
       QuantidadeNaoAvaliada,
     });
   } catch (error) {
-    return res.status(500).json({ mensage: 'tente novamente mais tarde' });
+    return res.status(500).json({ mensage: 'please, try later' });
+  }
+};
+
+const readAllAnswers = async (req, res) => {
+  try {
+    const findAllAnswers = await ModelAnswers.find();
+
+    if (!findAllAnswers) return res.status(404).json('no answer found. try later');
+
+    return res.status(200).json(findAllAnswers);
+  } catch (error) {
+    return res.status(500).json({ mensage: 'please, try later' });
   }
 };
 
 module.exports = {
   index,
   create,
+  readAllAnswers,
 };
