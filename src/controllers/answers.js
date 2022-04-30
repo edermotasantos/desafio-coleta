@@ -1,34 +1,14 @@
 const Answers = require('../services/answers');
+const fs = require('fs');
 
 let last_id = undefined;
 let positiveQuantity = 0;
 let negativeQuantity = 0;
 let unassessedQuantity = 0;
+const arrayOfJsonAnswers = [];
 
 const index = (_req, res) => {
   res.json({ message: 'Respostas regitradas com sucesso com sucesso!' });
-};
-
-const create = async (req, res) => {
-  try {
-    const { Pergunta1, Pergunta2, Pergunta3, Pergunta4 } = req.body;
-    let data = {};
-    let countAnswers = await findLastAnswers(last_id, Pergunta1, Pergunta2, Pergunta3);
-    
-    data = {
-      Pergunta1,
-      Pergunta2,
-      Pergunta3,
-      Pergunta4,
-      ...countAnswers,
-    };
-  
-    const { _id} = await Answers.create(data);
-    last_id = _id;
-    return res.status(201).json({ _id, Pergunta1, Pergunta2, Pergunta3, Pergunta4 });
-  } catch (error) {
-    return res.status(500).json({ mensage: 'tente novamente mais tarde' });
-  }
 };
 
 const findLastAnswers = async (last_id, Pergunta1, Pergunta2, Pergunta3) => {
@@ -52,6 +32,53 @@ const findLastAnswers = async (last_id, Pergunta1, Pergunta2, Pergunta3) => {
     'QuantidadeNegativa': QuantidadeNegativa + negativeQuantity,
     'QuantidadeNaoAvaliada': QuantidadeNaoAvaliada + unassessedQuantity,
   };
+};
+
+const writeFile = async (_id, Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada) => {
+  arrayOfJsonAnswers.push({ _id, Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada });
+  const answersString = JSON.stringify(arrayOfJsonAnswers);
+  fs.writeFile('coleta-de-respostas.txt', answersString, (err) => {
+    if (err) throw err;
+    console.log('O criado com sucesso!');
+  });
+};
+
+const create = async (req, res) => {
+  try {
+    const { Pergunta1, Pergunta2, Pergunta3, Pergunta4 } = req.body;
+    let data = {};
+    const { 
+      QuantidadePositiva,
+      QuantidadeNegativa,
+      QuantidadeNaoAvaliada,
+    } = await findLastAnswers(last_id, Pergunta1, Pergunta2, Pergunta3);
+    
+    data = {
+      Pergunta1,
+      Pergunta2,
+      Pergunta3,
+      Pergunta4,
+      QuantidadePositiva,
+      QuantidadeNegativa,
+      QuantidadeNaoAvaliada,
+    };
+  
+    const { _id} = await Answers.create(data);
+    last_id = _id;
+    writeFile(_id, Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada);
+    return res.status(201).json({ 
+      _id,
+      Pergunta1,
+      Pergunta2,
+      Pergunta3,
+      Pergunta4,
+      QuantidadePositiva,
+      QuantidadeNegativa,
+      QuantidadeNaoAvaliada,
+    });
+  } catch (error) {
+    return res.status(500).json({ mensage: 'tente novamente mais tarde' });
+  }
 };
 
 module.exports = {
