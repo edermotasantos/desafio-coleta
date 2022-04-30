@@ -5,14 +5,14 @@ const {
 const Error = require('../util/errors');
 const Answers = require('../models/answers');
 
-const create = async ({ Pergunta1, Pergunta2, Pergunta3, Pergunta4 }) => {
+const create = async ({ Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada  }) => {
   const answersError = await checkAnswers(Pergunta4);
   const lengthAnswersError = await checkAnswerLength(Pergunta4);
-
+  
   if(answersError) return Error.missingData;
   if(lengthAnswersError) return Error.invalidlenght;
 
-  const answers = await Answers.create({ Pergunta1, Pergunta2, Pergunta3, Pergunta4 });
+  const answers = await Answers.create({ Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada });
   return answers;
 };
 

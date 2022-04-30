@@ -5,6 +5,9 @@ const DataSchema = new mongoose.Schema({
   Pergunta2: String,
   Pergunta3: String,
   Pergunta4: String,
+  QuantidadePositiva: Number,
+  QuantidadeNegativa: Number,
+  QuantidadeNaoAvaliada: Number,
 }, {
   timestamps: false,
 });
