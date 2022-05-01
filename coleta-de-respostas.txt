@@ -1,1 +1,1 @@
-[{"_id":"626dca7d79e08368a7e8b0d3","Pergunta1":"Sim","Pergunta2":"Sim","Pergunta3":"Agora!!","Pergunta4":"Quero conhecer mais sobre a empresa, desafios e superá-los em conjunto com um time incrível!"}]
+[{"_id":"626e8b6755a459d82dcb622a","Pergunta1":"Não","Pergunta2":"Sim","Pergunta3":"Não Sei","Pergunta4":"Quero conhecer mais sobre a empresa, desafios e superá-los em conjunto com um time incrível!","QuantidadePositiva":1,"QuantidadeNegativa":1,"QuantidadeNaoAvaliada":1}]
