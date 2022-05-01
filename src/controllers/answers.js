@@ -22,7 +22,11 @@ const create = async (req, res) => {
   try {
     const { Pergunta1, Pergunta2, Pergunta3, Pergunta4 } = req.body;
     let data = {};
-    const { S, N, A } = Counters.answerCounter(Pergunta1, Pergunta2, Pergunta3);
+    const {
+      S: QuantidadePositiva,
+      N: QuantidadeNegativa,
+      A: QuantidadeNaoAvaliada
+    } = Counters.answerCounter(Pergunta1, Pergunta2, Pergunta3);
 
     // 'S' caso a resposta for “Sim” ou “Agora
     // 'N' caso a resposta for “Não
@@ -33,9 +37,9 @@ const create = async (req, res) => {
       Pergunta2,
       Pergunta3,
       Pergunta4,
-      QuantidadePositiva: S,
-      QuantidadeNegativa: N,
-      QuantidadeNaoAvaliada: A,
+      QuantidadePositiva,
+      QuantidadeNegativa,
+      QuantidadeNaoAvaliada,
     };
 
     const { _id } = await Answers.create(data);
