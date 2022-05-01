@@ -4,9 +4,11 @@
   "description": "Desafio Coleta GRX",
   "main": "index.js",
   "scripts": {
+    "client": "npm start --prefix client",
+    "server": "nodemon server.js",
     "test": "jest --testEnvironment=node --runInBand ./tests",
     "lint": "./node_modules/.bin/eslint .",
-    "dev": "nodemon server.js"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
   },
   "homepage": "https://github.com/edermotasantos/desafio-coleta#readme",
   "devDependencies": {
+    "concurrently": "^7.1.0",
     "eslint": "^8.14.0",
     "eslint-plugin-react": "^7.29.4",
     "jest": "^28.0.3",

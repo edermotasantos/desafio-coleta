@@ -10,7 +10,7 @@ const mongoose = require('mongoose'); // para fazer conexão com o MongoDB
 
 const routes = require('./src/routes/routes');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const mongoDbUrl = `mongodb://${process.env.HOSTNAME || 'mongodb'}:27017/desafio-coleta`;
 
