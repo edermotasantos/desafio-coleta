@@ -43,7 +43,7 @@ const create = async (req, res) => {
   }
 };
 
-const readAllAnswers = async (req, res) => {
+const readAllAnswers = async (_req, res) => {
   try {
     const findAllAnswers = await ModelAnswers.find();
 
