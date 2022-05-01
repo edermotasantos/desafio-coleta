@@ -63,13 +63,7 @@ const create = async (req, res) => {
 
     data = {
       _id,
-      Pergunta1,
-      Pergunta2,
-      Pergunta3,
-      Pergunta4,
-      QuantidadePositiva: S,
-      QuantidadeNegativa: N,
-      QuantidadeNaoAvaliada: A,
+      ...data,
     };
   
     writeFile(data);
