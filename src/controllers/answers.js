@@ -1,21 +1,10 @@
 const Answers = require('../services/answers');
 const Counters = require('../util/counters');
+const TxtStore = require('../util/txtStore');
 const ModelAnswers = require('../models/answers');
-const fs = require('fs');
-
-const arrayOfJsonAnswers = [];
 
 const index = (_req, res) => {
   res.json({ message: 'Respostas regitradas com sucesso com sucesso!' });
-};
-
-const writeFile = async (data) => {
-  arrayOfJsonAnswers.push(data);
-  const answersString = JSON.stringify(arrayOfJsonAnswers);
-  fs.writeFile('coleta-de-respostas.txt', answersString, (err) => {
-    if (err) throw err;
-    console.log('Arquivo coleta-de-respostas.txt criado com sucesso!');
-  });
 };
 
 const create = async (req, res) => {
@@ -44,12 +33,9 @@ const create = async (req, res) => {
 
     const { _id } = await Answers.create(data);
 
-    data = {
-      _id,
-      ...data,
-    };
+    data = { _id, ...data };
   
-    writeFile(data);
+    TxtStore.writeFile(data);
 
     return res.status(201).json(data);
   } catch (error) {
