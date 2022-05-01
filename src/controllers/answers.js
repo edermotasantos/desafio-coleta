@@ -16,8 +16,8 @@ const answerCounter = (Pergunta1, Pergunta2, Pergunta3) => {
     obj['A'] = 0; // 'A' caso a resposta for “Não Sei”
   }
 
-  obj[Pergunta1[0]] += 1;
-  obj[Pergunta2[0]] += 1;
+  obj[Pergunta1[0]] += 1; // A primeira letra é o mesmo nome da chave que será somada
+  obj[Pergunta2[0]] += 1; // pode ser "Não"[0] = "N" ou "Sim"[0] = "S" 
   if (Pergunta3 === 'Não Sei'){
     obj['A'] += 1;
     return obj;
@@ -30,8 +30,8 @@ const answerCounter = (Pergunta1, Pergunta2, Pergunta3) => {
   return obj;
 };
 
-const writeFile = async (_id, Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada) => {
-  arrayOfJsonAnswers.push({ _id, Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada });
+const writeFile = async (data) => {
+  arrayOfJsonAnswers.push(data);
   const answersString = JSON.stringify(arrayOfJsonAnswers);
   fs.writeFile('coleta-de-respostas.txt', answersString, (err) => {
     if (err) throw err;
@@ -44,6 +44,11 @@ const create = async (req, res) => {
     const { Pergunta1, Pergunta2, Pergunta3, Pergunta4 } = req.body;
     let data = {};
     const { S, N, A } = answerCounter(Pergunta1, Pergunta2, Pergunta3);
+
+    // 'S' caso a resposta for “Sim” ou “Agora
+    // 'N' caso a resposta for “Não
+    // 'A' caso a resposta for “Não Sei”
+
     data = {
       Pergunta1,
       Pergunta2,
@@ -53,11 +58,23 @@ const create = async (req, res) => {
       QuantidadeNegativa: N,
       QuantidadeNaoAvaliada: A,
     };
-  
+
     const { _id } = await Answers.create(data);
-    const { QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada } = data; 
-    writeFile(_id, Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada);
-    return res.status(201).json({ _id, Pergunta1, Pergunta2, Pergunta3, Pergunta4, QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada });
+
+    data = {
+      _id,
+      Pergunta1,
+      Pergunta2,
+      Pergunta3,
+      Pergunta4,
+      QuantidadePositiva: S,
+      QuantidadeNegativa: N,
+      QuantidadeNaoAvaliada: A,
+    };
+  
+    writeFile(data);
+
+    return res.status(201).json(data);
   } catch (error) {
     return res.status(500).json({ mensage: 'please, try later' });
   }
