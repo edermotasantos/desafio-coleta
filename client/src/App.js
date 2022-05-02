@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
-import './App.css';
+import CollectProvider from './context/CollectProvider';
 import AddAnswers from './components/AddAnswers';
 
 function App() {
   return (
-    <div className="app">
+    <CollectProvider>
       <Header />
       <AddAnswers />
-    </div>
+    </CollectProvider>
   );
 }
 
