@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import CollectProvider from '../context/CollectProvider';
 import AddAnswers from '../components/AddAnswers';
 
-function App() {
+function Home() {
   return (
     <CollectProvider>
       <Header />
@@ -12,4 +12,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
