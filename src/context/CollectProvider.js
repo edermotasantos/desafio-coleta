@@ -7,6 +7,12 @@ function CollectProvider({ children }) {
   const [answer2, setAnswer2] = useState('Sim', 'Não');
   const [answer3, setAnswer3] = useState('Sim', 'Não', 'Não Sei', 'Agora!!');
   const [answer4, setanswer4] = useState('');
+  const [answers, setAnswers] = useState({
+    Pergunta1: '',
+    Pergunta2: '',
+    Pergunta3: '',
+    Pergunta4: '',
+  });
 
   const data = {
     answer1,
@@ -17,6 +23,8 @@ function CollectProvider({ children }) {
     setAnswer3,
     answer4,
     setanswer4,
+    answers,
+    setAnswers,
   };
   
   return (
