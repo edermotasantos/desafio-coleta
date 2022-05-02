@@ -7,18 +7,7 @@ function AddAnswers() {
     setAnswers,
   } = useContext(CollectContext);
 
-  const handleClick = (e) => {
-    const { name, value } = e.target;
-    setAnswers((prevState) => {
-      return {
-        ...prevState,
-        [name]: value,
-      };
-    });
-    console.log(answers);
-  };
-  
-  const handleChange = (e) => {
+  const newAnswer = (e) => {
     const { name, value } = e.target;
     setAnswers((prevState) => {
       return {
@@ -29,9 +18,19 @@ function AddAnswers() {
     console.log(answers);
   };
 
-  const sendButton = (e) => {
-    const JSONAnswers = JSON.stringify(answers);
-    console.log(JSONAnswers);
+  const sendButton = async (e) => {
+    // const data = JSON.stringify(answers);
+    // console.log(data);
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(answers)
+    };
+  
+    fetch('http://localhost:3001/answers/', requestOptions)
+      .then(response => response.json())
+      .then(data => this.setState({ postId: data.id }));
   }
 
   return (
@@ -42,7 +41,7 @@ function AddAnswers() {
           <button
             type="button"
             data-testid="yes-button1"
-            name="Pergunta1" onClick={ (e) => handleClick(e) }
+            name="Pergunta1" onClick={ (e) => newAnswer(e) }
             value="Sim"
           >
             Sim
@@ -51,7 +50,7 @@ function AddAnswers() {
             type="button"
             data-testid="no-button1"
             name="Pergunta1"
-            onClick={ (e) => handleClick(e) }
+            onClick={ (e) => newAnswer(e) }
             value="Não"
           >
             Não
@@ -65,7 +64,7 @@ function AddAnswers() {
             type="button"
             data-testid="yes-button2"
             name="Pergunta2"
-            onClick={ (e) => handleClick(e) }
+            onClick={ (e) => newAnswer(e) }
             value="Sim"
           >
             Sim
@@ -74,7 +73,7 @@ function AddAnswers() {
             type="button"
             data-testid="no-button2"
             name="Pergunta2"
-            onClick={ (e) => handleClick(e) }
+            onClick={ (e) => newAnswer(e) }
             value="Não"
           >
             Não
@@ -88,7 +87,7 @@ function AddAnswers() {
             type="button"
             data-testid="yes-button3"
             name="Pergunta3"
-            onClick={ (e) => handleClick(e) }
+            onClick={ (e) => newAnswer(e) }
             value="Sim"
           >
             Sim
@@ -97,7 +96,7 @@ function AddAnswers() {
             type="button"
             data-testid="no-button3"
             name="Pergunta3"
-            onClick={ (e) => handleClick(e) }
+            onClick={ (e) => newAnswer(e) }
             value="Não"
           >
             Não
@@ -106,7 +105,7 @@ function AddAnswers() {
             type="button"
             data-testid="idontkonw-button3"
             name="Pergunta3"
-            onClick={ (e) => handleClick(e) }
+            onClick={ (e) => newAnswer(e) }
             value="Não Sei"
           >
             Não Sei
@@ -115,7 +114,7 @@ function AddAnswers() {
             type="button"
             data-testid="rightnow-button3"
             name="Pergunta3"
-            onClick={ (e) => handleClick(e) }
+            onClick={ (e) => newAnswer(e) }
             value="Agora!!"
           >
             Agora!!
@@ -130,7 +129,7 @@ function AddAnswers() {
             maxLength="200"
             data-testid="textarea"
             name="Pergunta4"
-            onChange={ (e) => handleChange(e) }
+            onChange={ (e) => newAnswer(e) }
           >
           </textarea>
         </div>

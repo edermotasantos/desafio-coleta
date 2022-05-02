@@ -1,14 +1,10 @@
 import React from 'react';
-import Header from './components/Header';
-import CollectProvider from './context/CollectProvider';
-import AddAnswers from './components/AddAnswers';
+import './App.css';
+import Home from './pages/Home'
 
 function App() {
   return (
-    <CollectProvider>
-      <Header />
-      <AddAnswers />
-    </CollectProvider>
+    <Home />
   );
 }
 
