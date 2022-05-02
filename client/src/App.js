@@ -1,10 +1,13 @@
+import React from 'react';
+import Header from './components/Header';
+import './App.css';
+import AddAnswers from './components/AddAnswers';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Desafio Coleta</h1>
-      </header>
+    <div className="app">
+      <Header />
+      <AddAnswers />
     </div>
   );
 }

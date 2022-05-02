@@ -6,6 +6,6 @@ const Answers = require('../controllers/answers');
 
 routes.get('/', Answers.index);
 routes.post('/', Answers.create);
-routes.get('/answers', Answers.readAllAnswers);
+routes.get('/answers', Answers.readAnswersById);
 
 module.exports = routes;

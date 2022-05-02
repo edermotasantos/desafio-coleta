@@ -43,13 +43,13 @@ const create = async (req, res) => {
   }
 };
 
-const readAllAnswers = async (_req, res) => {
+const readAnswersById = async (_req, res) => {
   try {
-    const findAllAnswers = await ModelAnswers.find();
+    const findAnswersById = await ModelAnswers.find({}).sort({_id:-1}).limit(1); // para buscar o útimo item inserido
 
-    if (!findAllAnswers) return res.status(404).json('no answer found. try later');
+    if (!findAnswersById) return res.status(404).json('no answer found. try later');
 
-    return res.status(200).json(findAllAnswers);
+    return res.status(200).json(findAnswersById);
   } catch (error) {
     return res.status(500).json({ mensage: 'please, try later' });
   }
@@ -58,5 +58,5 @@ const readAllAnswers = async (_req, res) => {
 module.exports = {
   index,
   create,
-  readAllAnswers,
+  readAnswersById,
 };
