@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from './components/Header';
 import './App.css';
+import AddAnswers from './components/AddAnswers';
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <h1 className="page-title">Desafio Coleta</h1>
+      <AddAnswers />
     </div>
   );
 }
