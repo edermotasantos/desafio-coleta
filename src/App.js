@@ -1,14 +1,18 @@
 import React from 'react';
-import Header from './components/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import AddAnswers from './components/AddAnswers';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home  from './pages/Home';
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <AddAnswers />
-    </div>
+    <BrowserRouter>
+      <div className='app'>
+        <Routes>
+          <Route index element={<Home />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
