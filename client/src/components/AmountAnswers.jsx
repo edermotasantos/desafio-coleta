@@ -3,6 +3,16 @@ import CollectContext from "../context/CollectContext";
 import { useNavigate } from "react-router-dom";
 
 function AddAnswers() {
+  const titles = [
+    'Total',
+    'Quantidade Positiva',
+    'Porcentagem Positiva',
+    'Quantidade Negativa',
+    'Porcentagem Negativa',
+    'Quantidade Não Avaliada',
+    'Porcentagem Não Avaliada'
+  ];
+
   let navigate = useNavigate();
   const {
     amount,
@@ -14,7 +24,12 @@ function AddAnswers() {
     <table>
       <div>
         <div>
-          <span>{ Object.values(amount)[0] }</span>
+        { Object.values(amount).map((item, index) => (
+          <div key={ item }>
+            <h3>{ titles[index] }</h3>
+            <span>{ item }</span>
+          </div>
+        )) }
         </div>
         <div>
         <button

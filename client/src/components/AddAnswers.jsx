@@ -4,7 +4,17 @@ import { useNavigate } from "react-router-dom";
 
 function AddAnswers() {
   let navigate = useNavigate();
-  let setado = 0;
+
+  const titles = [
+    'Total',
+    'Quantidade Positiva',
+    'Porcentagem Positiva',
+    'Quantidade Negativa',
+    'Porcentagem Negativa',
+    'Quantidade Não Avaliada',
+    'Porcentagem Não Avaliada'
+  ];
+
   const {
     answers,
     setAnswers,
@@ -39,12 +49,12 @@ function AddAnswers() {
     await setAmount((prevState) => {
       return {
         ...prevState,
-        QuantidadePositiva,
-        QuantidadeNegativa,
-        QuantidadeNaoAvaliada,
         Total,
+        QuantidadePositiva,
         PorcentagemPositiva,
+        QuantidadeNegativa,
         PorcentagemNegativa,
+        QuantidadeNaoAvaliada,
         PorcentagemNaoAvaliada,
       }
     });
@@ -64,7 +74,6 @@ function AddAnswers() {
     await setNewAmout(newAnswer);
   }
 
-  
   return (
     <form>
       <div>
@@ -184,8 +193,12 @@ function AddAnswers() {
         >
           Ver Resultados
         </button>
-        <h2>Quantidade Positiva</h2>
-        <span>{ Object.values(amount)[0] }</span>
+        { Object.values(amount).map((item, index) => (
+          <div key={ item }>
+            <h3>{ titles[index] }</h3>
+            <span>{ item }</span>
+          </div>
+        )) }
       </div>
     </form>
   );
