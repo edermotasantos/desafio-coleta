@@ -1,0 +1,143 @@
+[33mcommit a35d9c80faf299f5adf1863739057202829453b9[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mfront-end[m[33m)[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Mon May 2 20:21:38 2022 -0300
+
+    feat: inicia página com resultados
+
+[33mcommit 78c8e44eeab8216c3c7330e23099dfae626e5e8b[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Mon May 2 20:06:40 2022 -0300
+
+    feat: cria página Home
+
+[33mcommit d048013d804a8a53c0709a8f5bac74f265419e15[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Mon May 2 18:06:42 2022 -0300
+
+    feat: permite registrar respostas
+
+[33mcommit a1b3e511b973d8a12ce257183547987776d77db3[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Mon May 2 10:57:30 2022 -0300
+
+    feat: exibe as últimas respostas inseridas
+
+[33mcommit dbbe53d24bc85d1debd4ed172b8eea140ab1b0ad[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 17:37:48 2022 -0300
+
+    testando versionamento
+
+[33mcommit 45761dab0d617ef0b7b5f38d16d3b93ed687eab7[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 16:42:52 2022 -0300
+
+    build: organiza pastas em client
+
+[33mcommit 66efcb678aea0eed4ebd8d7a796ab89deb0a083a[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 15:53:29 2022 -0300
+
+    chore: altera pasta front-end para client e configurações
+
+[33mcommit cae18073ecfcf31b459d1d3e386bf4f1e242b2b3[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 12:01:05 2022 -0300
+
+    fix: corrige página da rota para create
+
+[33mcommit d64dabfbecf80b7235c0999e5505ff3b140ff1b9[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 11:55:58 2022 -0300
+
+    refactor: cria a pasta back-end e armazena todos os arquivos correspondentes ao back end
+
+[33mcommit 23e927ef25910230941cd3238febec6ad2881491[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 11:35:15 2022 -0300
+
+    refactor: salva função para escrever em arquivo txt em txtStore.js
+
+[33mcommit 568ad58713438d35164131924e5bdbd79c7e248e[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 11:25:26 2022 -0300
+
+    refactor: altera nome das chaves do contador
+
+[33mcommit 5f8bf489f6f51d3cf51caa6d5226476d1f113398[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 11:21:13 2022 -0300
+
+    refactor: cria arquivo para armazenar os contadores
+
+[33mcommit 561ca78341c1327970fc6ec4c5c4c69652e4a5af[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 11:06:13 2022 -0300
+
+    refactor: refatora objeto para armazenar respostas
+
+[33mcommit 8cdb41f8914c5a8a70e45c05146bb51a2c5310c5[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 11:03:32 2022 -0300
+
+    refactor: refatora função para escrever em arquivo txt
+
+[33mcommit c8385d6e4d8e6328fccd4f5303cd0a557c0c5c95[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 10:50:29 2022 -0300
+
+    refactor: refatora answerCounter
+
+[33mcommit 24c9068ef57714e94e9996530af3f96ed31adaad[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sun May 1 10:31:13 2022 -0300
+
+    fix: corrige função para contar quantidade de respostas
+
+[33mcommit a1d62150308290ce5a5b358a782bd4f448ffe3fa[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sat Apr 30 20:50:49 2022 -0300
+
+    feat: possibilita mostrar a lista
+
+[33mcommit 14d13a0d6c28029ff337f3c93de18625a0216040[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sat Apr 30 20:31:09 2022 -0300
+
+    feat: cria a função para escrever lista de respostas em txt
+
+[33mcommit cf308fb004ec313ee1fc76f2de08b122aced700b[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sat Apr 30 19:32:38 2022 -0300
+
+    feat: faz a soma da quantidades de respostas
+
+[33mcommit 6fa18590acc8ef629078571bdc04270eb25df1ab[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sat Apr 30 17:35:10 2022 -0300
+
+    feat: envia resposta para banco de dados
+
+[33mcommit b2de1a7609cf3e10afe773a339d45b713331a2ac[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sat Apr 30 13:22:53 2022 -0300
+
+    feat: cria server.js
+
+[33mcommit 3793eea4886c64be5ed035ba571ba9edb44f0cf7[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sat Apr 30 10:41:21 2022 -0300
+
+    build: inclui gitignore e configura linter
+
+[33mcommit 6db79552d839f120734ec54bfd1c373b6a3d212e[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sat Apr 30 09:19:20 2022 -0300
+
+    iniciando projeto
+
+[33mcommit ea3280e6638fc4835856cb3a27272b5e34f9f7f0[m
+Author: Eder Santos <3derms@gmail.com>
+Date:   Sat Apr 30 09:16:21 2022 -0300
+
+    first commit

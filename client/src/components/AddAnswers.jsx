@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import CollectContext from "../context/CollectContext";
+import { useNavigate } from "react-router-dom";
 
 function AddAnswers() {
+  let navigate = useNavigate();
+
   const {
     answers,
     setAnswers,
@@ -19,18 +22,17 @@ function AddAnswers() {
   };
 
   const sendButton = async (e) => {
-    // const data = JSON.stringify(answers);
-    // console.log(data);
-
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(answers)
     };
   
-    fetch('http://localhost:3001/answers/', requestOptions)
+    fetch('http://localhost:3001/answers', requestOptions)
       .then(response => response.json())
       .then(data => this.setState({ postId: data.id }));
+    
+    navigate(`/answers`);
   }
 
   return (
