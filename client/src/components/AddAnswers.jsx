@@ -21,6 +21,13 @@ function AddAnswers() {
     console.log(answers);
   };
 
+
+  const fetchAnswers = async (requestOptions) => {
+    const response = await fetch('http://localhost:3001', requestOptions);
+    const data = await response.json();
+    console.log(data);
+  }
+
   const sendButton = async (e) => {
     const requestOptions = {
       method: 'POST',
@@ -28,9 +35,7 @@ function AddAnswers() {
       body: JSON.stringify(answers)
     };
   
-    fetch('http://localhost:3001/answers', requestOptions)
-      .then(response => response.json())
-      .then(data => this.setState({ postId: data.id }));
+    await fetchAnswers(requestOptions);
     
     navigate(`/answers`);
   }
