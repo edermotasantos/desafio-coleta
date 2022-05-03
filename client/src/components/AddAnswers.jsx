@@ -4,10 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 function AddAnswers() {
   let navigate = useNavigate();
-
+  let setado = 0;
   const {
     answers,
     setAnswers,
+    amount,
+    setAmount,
   } = useContext(CollectContext);
 
   const newAnswer = (e) => {
@@ -25,7 +27,27 @@ function AddAnswers() {
   const fetchAnswers = async (requestOptions) => {
     const response = await fetch('http://localhost:3001', requestOptions);
     const data = await response.json();
-    console.log(data);
+    return data;
+  }
+
+  const setNewAmout = async (data) => {
+    const { QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada } = data;
+    const Total = QuantidadePositiva + QuantidadeNegativa + QuantidadeNaoAvaliada;
+    const PorcentagemPositiva = (((QuantidadePositiva / Total) * 100).toFixed(2)) + '%';
+    const PorcentagemNegativa = (((QuantidadeNegativa / Total) * 100).toFixed(2)) + '%';
+    const PorcentagemNaoAvaliada = (((QuantidadeNaoAvaliada / Total) * 100).toFixed(2)) + '%';
+    await setAmount((prevState) => {
+      return {
+        ...prevState,
+        QuantidadePositiva,
+        QuantidadeNegativa,
+        QuantidadeNaoAvaliada,
+        Total,
+        PorcentagemPositiva,
+        PorcentagemNegativa,
+        PorcentagemNaoAvaliada,
+      }
+    });
   }
 
   const sendButton = async (e) => {
@@ -35,11 +57,14 @@ function AddAnswers() {
       body: JSON.stringify(answers)
     };
   
-    await fetchAnswers(requestOptions);
+    const newAnswer = await fetchAnswers(requestOptions);
     
-    navigate(`/answers`);
+    console.log('o que foi setado', amount);
+
+    await setNewAmout(newAnswer);
   }
 
+  
   return (
     <form>
       <div>
@@ -141,15 +166,27 @@ function AddAnswers() {
           </textarea>
         </div>
       </div>
-      <button
-        type="button"
-        data-testid="send-button"
-        name="send-button"
-        onClick={ (e) => sendButton(e) }
-        value={ answers }
-      >
-        Enviar
-      </button>
+      <div>
+        <button
+          type="button"
+          data-testid="send-button"
+          name="send-button"
+          onClick={ (e) => sendButton(e) }
+          value={ answers }
+        >
+          Enviar
+        </button>
+        <button
+          type="button"
+          data-testid="send-button"
+          name="send-button"
+          onClick={ (e) => navigate(`/answers`) }
+        >
+          Ver Resultados
+        </button>
+        <h2>Quantidade Positiva</h2>
+        <span>{ Object.values(amount)[0] }</span>
+      </div>
     </form>
   );
 }

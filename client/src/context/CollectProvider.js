@@ -10,9 +10,13 @@ function CollectProvider({ children }) {
     Pergunta4: '',
   });
 
+  const [amount, setAmount] = useState({});
+
   const data = {
     answers,
     setAnswers,
+    amount,
+    setAmount,
   };
   
   return (
