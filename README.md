@@ -73,13 +73,17 @@ Copie o ssh do projeto `git@github.com:edermotasantos/desafio-coleta.git`
 
 A inicialização da aplicação deve ser feita na pasta `/desafio-coleta` com o comando `npm run dev` que irá rodar tanto o front end (client) como o back end (server). Isso ocorre devido a configuração em package.json do back end, tendo em scripts as seguintes configurações:
 
-`"scripts": {
+
+```json
+"scripts": {
     "client": "npm start --prefix client",
     "server": "nodemon server.js",
     "test": "jest --testEnvironment=node --runInBand ./tests",
     "lint": "./node_modules/.bin/eslint .",
     "dev": "concurrently \"npm run server\" \"npm run client\""
-  },`
+},
+```
+
   
   A aplicação está configurada para rodar o back end (server) na porta local 3001, enquanto o front end (client) irá rodar na porta 3000. Localmente foi utilizado um arquivo `.env` (não enviado para o github) para as configurações locais, mas as funções estão configuradas para que também possa ser utilizadas sem esse arquivo.
 
