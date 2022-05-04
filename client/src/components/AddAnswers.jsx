@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
 
 function AddAnswers() {
   const {
@@ -79,7 +80,7 @@ function AddAnswers() {
     <>
       {home ? <form>
         <div>
-          <p>1 - Você se considera bom de lógica?</p>
+          <h2>1 - Você se considera bom de lógica?</h2>
           <div className="d-grid gap-2">
             <Button
               variant="primary"
@@ -107,7 +108,7 @@ function AddAnswers() {
           </div>
         </div>
         <div  className="d-grid gap-2">
-          <p>2 - Gosta de aprender com desafios?</p>
+          <h2>2 - Gosta de aprender com desafios?</h2>
           <div>
             <Button
               variant="primary"
@@ -136,7 +137,7 @@ function AddAnswers() {
           </div>
         </div>
         <div className="d-grid gap-2">
-          <p>3 - Gostaria de fazer parte da GRX?</p>
+          <h2>3 - Gostaria de fazer parte da GRX?</h2>
           <div>
             <Button
               variant="primary"
@@ -189,16 +190,18 @@ function AddAnswers() {
           </div>
         </div>
         <div>
-          <p>4 - Por favor, justifique a resposta anterior</p>
+          <h2>4 - Por favor, justifique a resposta anterior</h2>
           <div>
-            <textarea
+            <Form.Control
+              size="lg"
+              as="textarea"
+              rows={3}
               data-ls-module="charCounter"
               maxLength="200"
               data-testid="textarea"
               name="Pergunta4"
               onChange={ (e) => newAnswer(e) }
-            >
-            </textarea>
+            />
           </div>
         </div>
         <div className="d-grid gap-2">
@@ -224,9 +227,9 @@ function AddAnswers() {
                 style={{ backgroundColor: 'white-smoke' }}
               >
                 <Card.Body>
-                <Card.Title><h1 className="text-center">Total</h1></Card.Title>
+                <Card.Title><h2 className="text-center">Total</h2></Card.Title>
                   <Card.Text>
-                    <h1 className="text-center">{ Object.values(amount)[0] }</h1>
+                    <h2 className="text-center">{ Object.values(amount)[0] }</h2>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -234,9 +237,9 @@ function AddAnswers() {
                 <Col>
                   <Card>
                     <Card.Body>
-                      <Card.Title><h1 className="text-center">Quantidade Positiva</h1></Card.Title>
+                      <Card.Title><h2 className="text-center">Quantidade Positiva</h2></Card.Title>
                       <Card.Text>
-                        <h1 className="text-center">{ Object.values(amount)[1] }</h1>
+                        <h2 className="text-center">{ Object.values(amount)[1] }</h2>
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -244,9 +247,9 @@ function AddAnswers() {
                 <Col>
                   <Card>
                     <Card.Body>
-                      <Card.Title><h1 className="text-center">Porcentagem Positiva</h1></Card.Title>
+                      <Card.Title><h2 className="text-center">Porcentagem Positiva</h2></Card.Title>
                       <Card.Text>
-                        <h1 className="text-center">{ Object.values(amount)[2] }</h1>
+                        <h2 className="text-center">{ Object.values(amount)[2] }</h2>
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -254,9 +257,9 @@ function AddAnswers() {
                 <Col>
                   <Card>
                     <Card.Body>
-                      <Card.Title><h1 className="text-center">Quantidade Negativa</h1></Card.Title>
+                      <Card.Title><h2 className="text-center">Quantidade Negativa</h2></Card.Title>
                       <Card.Text>
-                        <h1 className="text-center">{ Object.values(amount)[3] }</h1>
+                        <h2 className="text-center">{ Object.values(amount)[3] }</h2>
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -264,9 +267,9 @@ function AddAnswers() {
                 <Col>
                   <Card>
                     <Card.Body>
-                      <Card.Title><h1 className="text-center">Porcentagem Negativa</h1></Card.Title>
+                      <Card.Title><h2 className="text-center">Porcentagem Negativa</h2></Card.Title>
                       <Card.Text>
-                        <h1 className="text-center">{ Object.values(amount)[4] }</h1>
+                        <h2 className="text-center">{ Object.values(amount)[4] }</h2>
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -274,9 +277,9 @@ function AddAnswers() {
                 <Col>
                   <Card>
                     <Card.Body>
-                      <Card.Title><h1 className="text-center">Quantidade Nao Avaliada</h1></Card.Title>
+                      <Card.Title><h2 className="text-center">Quantidade Nao Avaliada</h2></Card.Title>
                       <Card.Text>
-                        <h1 className="text-center">{ Object.values(amount)[5] }</h1>
+                        <h2 className="text-center">{ Object.values(amount)[5] }</h2>
                       </Card.Text>
                     </Card.Body>
                   </Card>
@@ -284,9 +287,9 @@ function AddAnswers() {
                 <Col>
                   <Card>
                     <Card.Body>
-                      <Card.Title><h1 className="text-center">Porcentagem Nao Avaliada</h1></Card.Title>
+                      <Card.Title><h2 className="text-center">Porcentagem Nao Avaliada</h2></Card.Title>
                       <Card.Text>
-                      <h1 className="text-center">{ Object.values(amount)[6] }</h1>
+                      <h2 className="text-center">{ Object.values(amount)[6] }</h2>
                       </Card.Text>
                     </Card.Body>
                   </Card>
