@@ -7,7 +7,7 @@ function Header() {
       <Container>
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
-            <Navbar.Brand href="#"><h1>Desafio Coleta</h1></Navbar.Brand>
+            <Navbar.Brand href="#">Desafio Coleta</Navbar.Brand>
           </Container>
         </Navbar>
       </Container>

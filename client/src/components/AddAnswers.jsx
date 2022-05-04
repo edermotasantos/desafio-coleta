@@ -78,7 +78,7 @@ function AddAnswers() {
 
   return (
     <>
-      {home ? <form>
+      {home ? <Form>
         <div>
           <h2>1 - Você se considera bom de lógica?</h2>
           <div className="d-grid gap-2">
@@ -190,8 +190,8 @@ function AddAnswers() {
           </div>
         </div>
         <div>
-          <h2>4 - Por favor, justifique a resposta anterior</h2>
-          <div>
+          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+            <Form.Label>4 - Por favor, justifique a resposta anterior</Form.Label>
             <Form.Control
               size="lg"
               as="textarea"
@@ -201,8 +201,9 @@ function AddAnswers() {
               data-testid="textarea"
               name="Pergunta4"
               onChange={ (e) => newAnswer(e) }
-            />
-          </div>
+              placeholder="Escreva um texto de 15-200 caracteres."
+            />   
+          </Form.Group>
         </div>
         <div className="d-grid gap-2">
           <Button
@@ -218,8 +219,8 @@ function AddAnswers() {
             Enviar
           </Button>
         </div>
-      </form> :
-      <form>
+      </Form> :
+      <table>
         <div>
           <div>
               <Card
@@ -310,7 +311,7 @@ function AddAnswers() {
           </Button>
         </div>        
       </div>
-    </form>
+    </table>
     }
     </>
   );
