@@ -106,7 +106,7 @@ Foi utilizado o MongoDB pela fácil inserção e extração de dados.
 
 ## Etapas Desafiadoras
 
-Tive um pouca dificuldade em back end, precisando só pensar em uma lógica em que fosse necessário armazenar a quantidade de cada resposta respondida e considerando um banco de dados inicialmente vazio. Não sendo necessário fazer busca no banco de dados para depois fazer a inserção das novas respostas com suas quantidades acumuladas.
+Tive pouca dificuldade em back end, precisando só pensar em uma lógica em que fosse necessário armazenar a quantidade de cada resposta respondida e considerando um banco de dados inicialmente vazio. Não sendo necessário fazer busca no banco de dados para depois fazer a inserção das novas respostas com suas quantidades acumuladas.
 No front end tive uma certa dificuldade em alguns pontos. O primeiro foi nao conseguir setar um valor quando era direcionado a página de respostas. Devido ao fato de que me propus a utilizar hooks para setar as respostas e utilizar o mesmo botão que o chama como call back também para direcionar para outra página com o <Navigate /> (React Router Dom v6) tive dificuldade em armazenar os dados. Após notar que tão cedo não conseguiria uma solução com o <Navigate/>, entendi que para o contexto seria bom aplicar uma renderização condicional, não sendo necessário o uso do Navigate.
 
 
