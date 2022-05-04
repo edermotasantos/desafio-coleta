@@ -80,35 +80,45 @@ function AddAnswers() {
     <>
       {home ? <Form>
         <div>
-          <h2>1 - Você se considera bom de lógica?</h2>
+          <Form.Label>1 - Você se considera bom de lógica?</Form.Label>
           <div className="d-grid gap-2">
-            <Button
-              variant="primary"
-              size="lg"
-              type="button"
-              data-testid="yes-button1"
-              name="Pergunta1" onClick={ (e) => newAnswer(e) }
-              value="Sim"
-              active
-            >
-              Sim
-            </Button>{' '}
-            <Button
-              variant="danger"
-              size="lg"
-              type="button"
-              data-testid="no-button1"
-              name="Pergunta1"
-              onClick={ (e) => newAnswer(e) }
-              value="Não"
-              active
-            >
-              Não
-            </Button>
+            <Form>
+              <Row xs="auto">
+                <Col>
+                  {/* <Form.Control placeholder="First name" /> */}
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    type="button"
+                    data-testid="yes-button1"
+                    name="Pergunta1" onClick={ (e) => newAnswer(e) }
+                    value="Sim"
+                    active
+                  >
+                    Sim
+                  </Button>
+                </Col>
+                <Col>
+                  {/* <Form.Control placeholder="Last name" /> */}
+                  <Button
+                    variant="danger"
+                    size="lg"
+                    type="button"
+                    data-testid="no-button1"
+                    name="Pergunta1"
+                    onClick={ (e) => newAnswer(e) }
+                    value="Não"
+                    active
+                  >
+                    Não
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
           </div>
         </div>
         <div  className="d-grid gap-2">
-          <h2>2 - Gosta de aprender com desafios?</h2>
+          <Form.Label>2 - Gosta de aprender com desafios?</Form.Label>
           <div>
             <Button
               variant="primary"
@@ -137,7 +147,7 @@ function AddAnswers() {
           </div>
         </div>
         <div className="d-grid gap-2">
-          <h2>3 - Gostaria de fazer parte da GRX?</h2>
+          <Form.Label>3 - Gostaria de fazer parte da GRX?</Form.Label>
           <div>
             <Button
               variant="primary"
