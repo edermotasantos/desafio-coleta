@@ -85,7 +85,7 @@ A API consta com 2 rotas:
  * `/answers` [`GET`]  Pegar a última resposta
 ---
 
-## Modo de desenvolvimento
+## Desenvolvimento
 
 ---
 Durante o desenvolvimento do front end (client), no envio para a inserção de novas respostas, foi decidido utilizar o dado que retorna desta inserção utilizando o método POST. Sendo utilizados os dados para serem exibidos na renderização das quantidades de respostas.
