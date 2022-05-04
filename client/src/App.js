@@ -1,8 +1,8 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home  from './pages/Home';
-import Answers from './pages/Answers';
 
 function App() {
   return (
@@ -10,7 +10,6 @@ function App() {
       <div className='app'>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="answers" element={<Answers />} />
         </Routes>
       </div>
     </BrowserRouter>

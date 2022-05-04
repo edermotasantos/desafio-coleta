@@ -9,14 +9,16 @@ function CollectProvider({ children }) {
     Pergunta3: '',
     Pergunta4: '',
   });
-
   const [amount, setAmount] = useState({});
+  const [home, setHome] = useState(true);
 
   const data = {
     answers,
     setAnswers,
     amount,
     setAmount,
+    home,
+    setHome,
   };
   
   return (
