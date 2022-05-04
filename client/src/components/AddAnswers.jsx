@@ -17,6 +17,8 @@ function AddAnswers() {
     setHome,
     count,
     setCount,
+    fewCharacters,
+    setFewCharacters,
   } = useContext(CollectContext);
 
   const newAnswer = (e) => {
@@ -76,6 +78,10 @@ function AddAnswers() {
     console.log('o que foi setado', amount);
 
     await setNewAmout(newAnswer);
+    if (count < 15) return setFewCharacters(
+      <p className="alert" style={{marginLeft: 25}} muted>
+        O seu texto precisa ter de 15 à 200 caracteres.
+      </p>);
     redirectToAnswers();
   }
 
@@ -216,7 +222,10 @@ function AddAnswers() {
               } }
               placeholder="Escreva um texto de 15-200 caracteres."
             />
+            <>
             <p className="counter" style={{marginLeft: 889}}>{`${count}/200`}</p>
+            { fewCharacters }
+            </>
           </Form.Group>
         </div>
         <div className="d-grid gap-2">
@@ -319,7 +328,11 @@ function AddAnswers() {
             type="button"
             data-testid="send-button"
             name="send-button"
-            onClick={ (e) => redirectToAnswers(e) }
+            onClick={ (e) => {
+              redirectToAnswers(e);
+              setFewCharacters(<></>);
+              setCount(0);
+            } }
             active
           >
             Voltar

@@ -2,6 +2,10 @@
   color: rgb(167, 163, 163);
 }
 
+.alert {
+  color: red;
+}
+
 .container-button {
   display: flex;
   flex-direction: row;
