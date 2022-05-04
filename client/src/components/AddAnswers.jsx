@@ -77,11 +77,23 @@ function AddAnswers() {
     
     console.log('o que foi setado', amount);
 
-    await setNewAmout(newAnswer);
+    
+    const { Pergunta1, Pergunta2, Pergunta3, Pergunta4 } = answers
+    
+    if (Pergunta1 === '' || Pergunta2 === '' || Pergunta3 === '') return setFewCharacters(
+      <p className="alert" style={{marginLeft: 25}} muted>
+        Todas as perguntas precisam ser respondidas
+      </p>);
+    
     if (count < 15) return setFewCharacters(
       <p className="alert" style={{marginLeft: 25}} muted>
         O seu texto precisa ter de 15 à 200 caracteres.
       </p>);
+
+    await setNewAmout(newAnswer);
+
+    setAnswers({ [Pergunta1]: '', [Pergunta2]: '', [Pergunta3]: '', [Pergunta4]: '' });
+
     redirectToAnswers();
   }
 
