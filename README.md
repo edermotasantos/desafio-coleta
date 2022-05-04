@@ -108,7 +108,7 @@ Foi utilizado o MongoDB pela fácil inserção e extração de dados.
 
 * Testes TDD
 * Refatoração do código e organização das mensagem de erro
-* Validadores
+* Criação de mais validadores no back end
 * Correção de espaçamento e cores na estilização
 
 
