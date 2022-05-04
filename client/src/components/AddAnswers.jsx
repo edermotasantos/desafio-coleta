@@ -101,7 +101,7 @@ function AddAnswers() {
     <>
       {home ? <Form>
         <div>
-          <Form.Label style={{marginLeft: 25, marginRight: 2}}>{"\n"}1 - Você se considera bom de lógica?{"\n"}</Form.Label>
+          <Form.Label className="first-question" style={{marginLeft: 25, marginRight: 2}}>{"\n"}1 - Você se considera bom de lógica?{"\n"}</Form.Label>
           <div>
             <Button
               variant="primary"
@@ -130,7 +130,7 @@ function AddAnswers() {
           </div>
         </div>
         <div  className="d-grid gap-2">
-          <Form.Label style={{marginLeft: 25, marginRight: 2}}>2 - Gosta de aprender com desafios?</Form.Label>
+          <Form.Label className="other-questions" style={{marginLeft: 25, marginRight: 2}}>2 - Gosta de aprender com desafios?</Form.Label>
           <div>
             <Button
               variant="primary"
@@ -161,7 +161,7 @@ function AddAnswers() {
           </div>
         </div>
         <div className="d-grid gap-2">
-          <Form.Label>3 - Gostaria de fazer parte da GRX?</Form.Label>
+          <Form.Label className="other-questions" style={{marginLeft: 25, marginRight: 2}}>3 - Gostaria de fazer parte da GRX?</Form.Label>
           <div>
             <Button
               variant="primary"
@@ -219,7 +219,7 @@ function AddAnswers() {
         </div>
         <div>
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>4 - Por favor, justifique a resposta anterior</Form.Label>
+            <Form.Label className="other-questions" style={{marginLeft: 25, marginRight: 2}}>4 - Por favor, justifique a resposta anterior</Form.Label>
             <Form.Control
               style={{height: 80, marginLeft: 25, marginRight: 2, width: 905}}
               as="textarea"
@@ -233,7 +233,7 @@ function AddAnswers() {
                 setCount(e.target.value.length);
               } }
               placeholder="Escreva um texto de 15-200 caracteres."
-            />
+            />{' '}
             <>
             <p className="counter" style={{marginLeft: 889}}>{`${count}/200`}</p>
             { fewCharacters }
@@ -261,7 +261,6 @@ function AddAnswers() {
           <div>
               <Card
                 className="g-4"
-                style={{ backgroundColor: 'white-smoke' }}
               >
                 <Card.Body>
                 <Card.Title><h2 className="text-center">Total</h2></Card.Title>
@@ -331,11 +330,12 @@ function AddAnswers() {
                     </Card.Body>
                   </Card>
                 </Col>
-              </Row>
+              </Row>{"\n"}
           </div>
         <div>
           <Button
             variant="primary"
+            style={{height: 60, marginLeft: 25}}
             size="lg"
             type="button"
             data-testid="send-button"
