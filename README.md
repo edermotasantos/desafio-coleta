@@ -104,6 +104,14 @@ Foi utilizado o MongoDB pela fácil inserção e extração de dados.
 
 ---
 
+## Etapas Ausentes ou que precisam ser melhoradas
+
+* Testes TDD
+* Refatoração do código e organização das mensagem de erro
+* Validadores
+* Correção de espaçamento e cores na estilização
+
+
 ## Próximos passos
 
 * Implementação de testes no Front End e no Back End
