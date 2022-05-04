@@ -230,7 +230,7 @@ function AddAnswers() {
                   </Card.Text>
                 </Card.Body>
               </Card>
-              <Row xs={1} md={2} className="g-4">
+              <Row xs={1} md={2} className="g-4" >
                 <Col>
                   <Card>
                     <Card.Body>
@@ -292,58 +292,6 @@ function AddAnswers() {
                   </Card>
                 </Col>
               </Row>
-              {/* <CardGroup>
-                <Card
-                  bg="danger"
-                  style={{ width: '50%' }}
-                  className="text-center"
-                >
-                  <Card.Body>
-                    <Card.Header><h1 className="text-center">Quantidade Negativa</h1></Card.Header>
-                    <Card.Text>
-                      <h1>{ Object.values(amount)[3] }</h1>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card
-                  bg="danger"
-                  style={{ width: '20%' }}
-                  className="text-center"
-                >{' '}
-                  <Card.Body>
-                    <Card.Header><h1 className="text-center">Porcentagem Negativa</h1></Card.Header>
-                    <Card.Text>
-                      <h1>{ Object.values(amount)[4] }</h1>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </CardGroup>
-              <CardGroup>
-                <Card
-                  bg="warning"
-                  style={{ width: '50%' }}
-                  className="text-center"
-                >
-                  <Card.Body>
-                    <Card.Header><h1 className="text-center">Quantidade Nao Avaliada</h1></Card.Header>
-                    <Card.Text>
-                      <h1>{ Object.values(amount)[5] }</h1>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-                <Card
-                  bg="warning"
-                  style={{ width: '20%' }}
-                  className="text-center"
-                >{' '}
-                  <Card.Body>
-                    <Card.Header><h1 className="text-center">Porcentagem Nao Avaliada</h1></Card.Header>
-                    <Card.Text>
-                      <h1>{ Object.values(amount)[6] }</h1>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </CardGroup> */}
           </div>
         <div>
           <Button
