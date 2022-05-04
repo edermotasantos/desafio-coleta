@@ -11,6 +11,7 @@ function CollectProvider({ children }) {
   });
   const [amount, setAmount] = useState({});
   const [home, setHome] = useState(true);
+  const [count, setCount] = React.useState(0);
 
   const data = {
     answers,
@@ -19,6 +20,8 @@ function CollectProvider({ children }) {
     setAmount,
     home,
     setHome,
+    count,
+    setCount,
   };
   
   return (

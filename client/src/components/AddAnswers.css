@@ -1,0 +1,8 @@
+.counter {
+  color: rgb(167, 163, 163);
+}
+
+.container-button {
+  display: flex;
+  flex-direction: row;
+}

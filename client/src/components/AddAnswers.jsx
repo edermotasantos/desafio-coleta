@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import CollectContext from "../context/CollectContext";
+import './AddAnswers.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
@@ -14,6 +15,8 @@ function AddAnswers() {
     setAmount,
     home,
     setHome,
+    count,
+    setCount,
   } = useContext(CollectContext);
 
   const newAnswer = (e) => {
@@ -80,48 +83,40 @@ function AddAnswers() {
     <>
       {home ? <Form>
         <div>
-          <Form.Label>1 - Você se considera bom de lógica?</Form.Label>
-          <div className="d-grid gap-2">
-            <Form>
-              <Row xs="auto">
-                <Col>
-                  {/* <Form.Control placeholder="First name" /> */}
-                  <Button
-                    variant="primary"
-                    size="lg"
-                    type="button"
-                    data-testid="yes-button1"
-                    name="Pergunta1" onClick={ (e) => newAnswer(e) }
-                    value="Sim"
-                    active
-                  >
-                    Sim
-                  </Button>
-                </Col>
-                <Col>
-                  {/* <Form.Control placeholder="Last name" /> */}
-                  <Button
-                    variant="danger"
-                    size="lg"
-                    type="button"
-                    data-testid="no-button1"
-                    name="Pergunta1"
-                    onClick={ (e) => newAnswer(e) }
-                    value="Não"
-                    active
-                  >
-                    Não
-                  </Button>
-                </Col>
-              </Row>
-            </Form>
-          </div>
-        </div>
-        <div  className="d-grid gap-2">
-          <Form.Label>2 - Gosta de aprender com desafios?</Form.Label>
+          <Form.Label style={{marginLeft: 25, marginRight: 2}}>{"\n"}1 - Você se considera bom de lógica?{"\n"}</Form.Label>
           <div>
             <Button
               variant="primary"
+              style={{height: 80, marginLeft: 25, marginRight: 2, width: 450}}
+              type="button"
+              data-testid="yes-button1"
+              name="Pergunta1"
+              onClick={ (e) => newAnswer(e) }
+              value="Sim"
+              active
+            >
+              Sim
+            </Button>{' '}
+            <Button
+              variant="danger"
+              style={{height: 80, marginLeft: 2, marginRight: 2, width: 450}}
+              type="button"
+              data-testid="no-button1"
+              name="Pergunta1"
+              onClick={ (e) => newAnswer(e) }
+              value="Não"
+              active
+            >
+              Não
+            </Button>
+          </div>
+        </div>
+        <div  className="d-grid gap-2">
+          <Form.Label style={{marginLeft: 25, marginRight: 2}}>2 - Gosta de aprender com desafios?</Form.Label>
+          <div>
+            <Button
+              variant="primary"
+              style={{height: 80, marginLeft: 25, marginRight: 2, width: 450}}
               size="lg"
               type="button"
               data-testid="yes-button2"
@@ -134,6 +129,7 @@ function AddAnswers() {
             </Button>{' '}
             <Button
               variant="danger"
+              style={{height: 80, marginLeft: 2, marginRight: 2, width: 450}}
               size="lg"
               type="button"
               data-testid="no-button2"
@@ -143,7 +139,7 @@ function AddAnswers() {
               active
             >
               Não
-            </Button>
+            </Button>{"\n"}
           </div>
         </div>
         <div className="d-grid gap-2">
@@ -151,6 +147,7 @@ function AddAnswers() {
           <div>
             <Button
               variant="primary"
+              style={{height: 80, marginLeft: 25, marginRight: 2, width: 221}}
               size="lg"
               type="button"
               data-testid="yes-button3"
@@ -160,9 +157,10 @@ function AddAnswers() {
               active
             >
               Sim
-            </Button>
+            </Button>{' '}
             <Button
               variant="danger"
+              style={{height: 80, marginLeft: 2, marginRight: 2, width: 221}}
               size="lg"
               type="button"
               data-testid="no-button3"
@@ -175,6 +173,7 @@ function AddAnswers() {
             </Button>{' '}
             <Button
               variant="warning"
+              style={{height: 80, marginLeft: 2, marginRight: 2, width: 221}}
               size="lg"
               type="button"
               data-testid="idontkonw-button3"
@@ -187,6 +186,7 @@ function AddAnswers() {
             </Button>{' '}
             <Button
               variant="success"
+              style={{height: 80, marginLeft: 2, marginRight: 2, width: 221}}
               size="lg"
               type="button"
               data-testid="rightnow-button3"
@@ -203,21 +203,26 @@ function AddAnswers() {
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>4 - Por favor, justifique a resposta anterior</Form.Label>
             <Form.Control
-              size="lg"
+              style={{height: 80, marginLeft: 25, marginRight: 2, width: 905}}
               as="textarea"
               rows={3}
               data-ls-module="charCounter"
               maxLength="200"
               data-testid="textarea"
               name="Pergunta4"
-              onChange={ (e) => newAnswer(e) }
+              onChange={ (e) => { 
+                newAnswer(e);
+                setCount(e.target.value.length);
+              } }
               placeholder="Escreva um texto de 15-200 caracteres."
-            />   
+            />
+            <p className="counter" style={{marginLeft: 889}}>{`${count}/200`}</p>
           </Form.Group>
         </div>
         <div className="d-grid gap-2">
           <Button
             variant="primary"
+            style={{height: 60, marginLeft: 25, marginRight: 2, width: 905}}
             size="lg"
             type="button"
             data-testid="send-button"
@@ -227,7 +232,7 @@ function AddAnswers() {
             active
           >
             Enviar
-          </Button>
+          </Button>{"\n"}
         </div>
       </Form> :
       <table>
