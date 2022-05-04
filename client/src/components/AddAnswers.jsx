@@ -221,6 +221,7 @@ function AddAnswers() {
           <div>
               <Card
                 className="g-4"
+                style={{ backgroundColor: 'white-smoke' }}
               >
                 <Card.Body>
                 <Card.Title><h1 className="text-center">Total</h1></Card.Title>
