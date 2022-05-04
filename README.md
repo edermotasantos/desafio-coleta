@@ -21,26 +21,29 @@ Foi proposto que o desafio técnico fosse disponibilizado no Github e fosse trab
 
 Os Dados deve ser recebido em formato JSON da seguinte forma:
 
-`{
-  "Pergunta1":"Sim",
-  "Pergunta2":"Sim",
-  "Pergunta3":"Agora!!",
-  "Pergunta4":"Quero conhecer mais sobre a empresa, desafios e superá-los em
-  conjunto com um time incrível!"
-}`
+```json
+{
+    "Pergunta1": "Sim",
+    "Pergunta2": "Sim",
+    "Pergunta3": "Agora!!",
+    "Pergunta4": "Quero conhecer mais sobre a empresa, desafios e superá-los em conjunto com um time incrível!"
+}
+```
 
 E enviados para o arquivo txt e o banco de dados no formato JSON, dessa maneira:
 
-`{
+```json
+{
   "Pergunta1":"Sim",
   "Pergunta2":"Sim",
   "Pergunta3":"Agora!!",
-  "Pergunta4":"Quero conhecer mais sobre a empresa, desafios e superá-los em
-  conjunto com um time incrível!",
+  "Pergunta4":"Quero conhecer mais sobre a empresa, desafios e superá-los em conjunto com um time incrível!",
   "QuantidadePositiva":4,
   "QuantidadeNegativa":0,
   "QuantidadeNaoAvaliada":0
-}`
+}
+```
+
 
 Após receber os dados, deve ser feito um cálculo da quantidade de respostas positivas, negativas e não-avaliativas de maneira acumulativa.
 
