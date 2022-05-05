@@ -6,7 +6,7 @@
   "scripts": {
     "client": "npm start --prefix client",
     "server": "nodemon server.js",
-    "test": "jest --testEnvironment=node --runInBand ./tests",
+    "test": "jest",
     "lint": "./node_modules/.bin/eslint .",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
