@@ -119,10 +119,11 @@ Foi utilizado o MongoDB pela fácil inserção e extração de dados.
 
 Tive pouca dificuldade em back end. No começo comecei a desenvolver um código pensando não só em uma lógica em que fosse necessário armazenar a quantidade de cada resposta enviada, mas considerando um banco de dados inicialmente já preenchido. Logo após mudei o código, tendo em vista que não é necessário fazer busca no banco de dados para depois fazer a inserção das novas respostas com suas quantidades acumuladas.
 No front end tive uma certa dificuldade em alguns pontos. O primeiro foi nao conseguir setar um valor quando era direcionado a página de respostas. Devido ao fato de que me propus a utilizar hooks para setar as respostas e utilizar o mesmo botão que o chama como call back também para direcionar para outra página com o <Navigate /> (React Router Dom v6) tive dificuldade em armazenar os dados. Após notar que tão cedo não conseguiria uma solução com o <Navigate/>, entendi que para o contexto seria bom aplicar uma renderização condicional, não sendo necessário o uso do Navigate.
+Foram feitos também desenvolvidos testes utilizando Jest.
 
 ## Etapas Ausentes ou que precisam ser melhoradas
 
-* Testes TDD
+* Precisa ser feitos mais Testes TDD
 * Refatoração do código e organização das mensagem de erro
 * Criação de mais validadores no back end
 * Correção de espaçamento e cores na estilização
