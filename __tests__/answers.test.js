@@ -29,7 +29,7 @@ describe('1 - Crie um endpoint para cadastro de perguntas', () => {
     await connection.close();
   });
   
-  it('Será validado que é possível cadastrar perguntas não respondidas', async () => {
+  it('Será validado que é possível cadastrar perguntas respondidas', async () => {
     let result;
   
     await frisby
@@ -74,6 +74,51 @@ describe('1 - Crie um endpoint para cadastro de perguntas', () => {
                 'QuantidadeNegativa': 1,
                 'QuantidadePositiva': 5}
             );
+          });
+      });
+  });
+
+  it('Será validado que não é possível cadastrar perguntas não respondidas', async () => {
+    let result;
+
+    await frisby
+      .post(`${url}/`,
+        {
+          Pergunta1: 'Sim',
+          Pergunta2: 'Sim',
+          Pergunta3: 'Agora!!',
+          Pergunta4: 'Quero conhecer mais sobre a empresa, desafios e superá-los em conjunto com um time incrível!',
+          QuantidadePositiva: 5,
+          QuantidadeNegativa: 0,
+          QuantidadeNaoAvaliada: 0,
+        })
+      .expect('status', 200)
+      .then((response) => {
+        const { body } = response;
+        result = JSON.parse(body);
+        return frisby
+          .setup({
+            request: {
+              headers: {
+                Authorization: result.token,
+                'Content-Type': 'application/json',
+              },
+            },
+          })
+          .post(`${url}/`,
+            {
+              Pergunta1: 'Sim',
+              Pergunta2: '',
+              Pergunta3: 'Agora!!',
+              Pergunta4: 'Quero conhecer mais sobre a empresa, desafios e superá-los em conjunto com um time incrível!',
+              QuantidadePositiva: 5,
+              QuantidadeNegativa: 0,
+              QuantidadeNaoAvaliada: 0,
+            })
+          .expect('status', 401)
+          .then((responseAdmin) => {
+            const { json } = responseAdmin;
+            expect(json.message).toBe('this field must be filled');
           });
       });
   });
