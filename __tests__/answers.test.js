@@ -92,7 +92,7 @@ describe('1 - Crie um endpoint para cadastro de perguntas', () => {
           QuantidadeNegativa: 0,
           QuantidadeNaoAvaliada: 0,
         })
-      .expect('status', 200)
+      .expect('status', 201)
       .then((response) => {
         const { body } = response;
         result = JSON.parse(body);
