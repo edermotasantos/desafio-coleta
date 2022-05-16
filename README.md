@@ -74,6 +74,9 @@ Copie o ssh do projeto `git@github.com:edermotasantos/desafio-coleta.git`
   * `git clone git@github.com:edermotasantos/desafio-coleta.git`
   * `cd desafio-coleta`
   * `npm install`
+  * `cd client`
+  * `npm install`
+  * `cd ..`
   * `npm run dev`
 
 A inicialização da aplicação deve ser feita na pasta `/desafio-coleta` com o comando `npm run dev` que irá rodar tanto o front end (client) como o `back end` (server). Isso ocorre devido a configuração em `package.json` do `back end`, tendo em scripts as seguintes configurações:
