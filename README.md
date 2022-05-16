@@ -40,7 +40,12 @@ E enviados para o arquivo txt e o banco de dados no formato JSON, dessa maneira:
 }
 ```
 
-Após receber os dados, deve ser feito um cálculo da quantidade de respostas positivas, negativas e não-avaliativas de cada usuário de maneira acumulativa: 
+Após receber os dados, devem ser feitos os seguintes cálculos para cada preenchimento e de maneira acumulativa:
+- Cálculo da quantidade de respostas positivas
+- Cálculo da quantidade de respostas negativas
+- Cálculo da quantidade de respostas não-avaliativas
+
+Para que seja feito o cálculo em cada chave adequada é necessário considerar as seguintes informações: 
 - Em `QuantidadePositiva` é armazenada a quantidade de `"Sim"` e `"Agora!!"` como resposta positiva
 - Em `QuantidadeNegativa` é armazenada a quantidade de `"Não"`como resposta negativa
 - Em `QuantidadeNaoAvaliada` é contabilizada a quantidade `"Não Sei"` como resposta não avaliada
