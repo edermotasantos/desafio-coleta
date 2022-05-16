@@ -5,10 +5,6 @@
   <a href = "mailto:eder.mota@outlook.com"><img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white" target="_blank"></a> 
 </div>
 
-Vídeo demonstração (sem áudio)
-
-https://user-images.githubusercontent.com/82417443/166812564-868e5db9-8dca-420a-a321-b2ddc1533fce.mp4
-
 ## Contexto
 
 ---
