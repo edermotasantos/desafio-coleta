@@ -13,9 +13,9 @@ Esse projeto foi desenvolvido para uma vaga de full stack na empresa GRX Soluç�
 
 A proposta era desenvolver uma aplicação full stack para enviar respostas de um formulário do front end para o back end preenchendo um arquivo txt, contabilizando a quantidade de respostas positivas, negativas e não-avalidas, essa última para o caso do usuário não saber a resposta. 
 
-Foi proposto que o desafio técnico fosse disponibilizado no Github e fosse trabalhado com boas práticas atendendo Orientação ao Objeto, conceitos de SOLID, Clean Code e KISS.
+Foi proposto que o desafio técnico fosse disponibilizado no Github e fosse trabalhado com boas práticas atendendo `Orientação ao Objeto`, conceitos de `SOLID`, `Clean Code` e `KISS`.
 
-Os Dados deve ser recebido em formato JSON da seguinte forma:
+Os Dados deve ser recebido em formato `JSON` da seguinte forma:
 
 ```json
 {
@@ -26,7 +26,7 @@ Os Dados deve ser recebido em formato JSON da seguinte forma:
 }
 ```
 
-E enviados para o arquivo txt e o banco de dados no formato JSON, dessa maneira:
+E enviados para o arquivo `.txt` e o banco de dados no formato `JSON`, dessa maneira:
 
 ```json
 {
@@ -45,10 +45,12 @@ Após receber os dados, devem ser feitos os seguintes cálculos para cada preenc
 - Cálculo da quantidade de respostas negativas
 - Cálculo da quantidade de respostas não-avaliativas
 
+
 Para que seja feito o cálculo em cada chave adequada é necessário considerar as seguintes informações: 
 - Em `QuantidadePositiva` é armazenada a quantidade de `"Sim"` e `"Agora!!"` como resposta positiva
 - Em `QuantidadeNegativa` é armazenada a quantidade de `"Não"`como resposta negativa
 - Em `QuantidadeNaoAvaliada` é contabilizada a quantidade `"Não Sei"` como resposta não avaliada
+
 
 ## Stacks utilizadas para o desenvolvimento:
 - Node.js
@@ -56,8 +58,8 @@ Para que seja feito o cálculo em cada chave adequada é necessário considerar 
 - React.js (Context API e React Hooks)
 - React Bootstrap
 
-O desenvolvimento da aplicação foi feito no VSCODE, inicialmente trabalhado o back end através do Node.js com Mongoose. Foi utilizado o POSTMAN para testar se a a aplicação estava populando corretamente e o MongoDB Compass para visualizar o banco de dados. Logo após foi criada uma função para o preenchimento de um arquivo txt de modo a atender os requisitos inicias.
-No front end me propus a trabalhar com React (Context API e React Hooks) para o desenvolvimento das funções, renderização e a estilização da página ficou por conta do react bootstrap.
+O desenvolvimento da aplicação foi feito no `VSCODE`, inicialmente trabalhado o `back end` através do `Node.js` com `Mongoose`. Foi utilizado o `POSTMAN` para testar se a a aplicação estava populando corretamente e o `MongoDB Compass` para visualizar o banco de dados. Logo após foi criada uma função para o preenchimento de um arquivo `.txt` de modo a atender os requisitos inicias.
+No `front end` me propus a trabalhar com `React` (`Context API` e `React Hooks`) para o desenvolvimento das funções, renderização e a estilização da página ficou por conta do `react bootstrap`.
 
 ## Como instalar
 
@@ -74,7 +76,7 @@ Copie o ssh do projeto `git@github.com:edermotasantos/desafio-coleta.git`
   * `npm install`
   * `npm run dev`
 
-A inicialização da aplicação deve ser feita na pasta `/desafio-coleta` com o comando `npm run dev` que irá rodar tanto o front end (client) como o back end (server). Isso ocorre devido a configuração em package.json do back end, tendo em scripts as seguintes configurações:
+A inicialização da aplicação deve ser feita na pasta `/desafio-coleta` com o comando `npm run dev` que irá rodar tanto o front end (client) como o `back end` (server). Isso ocorre devido a configuração em `package.json` do `back end`, tendo em scripts as seguintes configurações:
 
 
 ```json
@@ -88,7 +90,7 @@ A inicialização da aplicação deve ser feita na pasta `/desafio-coleta` com o
 ```
 
   
-  A aplicação está configurada para rodar o back end (server) na porta local 3001, enquanto o front end (client) irá rodar na porta 3000. Localmente foi utilizado um arquivo `.env` (não enviado para o github) para as configurações locais, mas as funções estão configuradas para que também possa ser utilizadas sem esse arquivo.
+  A aplicação está configurada para rodar o `back end` (server) na porta local `3001`, enquanto o `front end` (client) irá rodar na porta `3000`. Localmente foi utilizado um arquivo `.env` (não enviado para o github) para as configurações locais, mas as funções estão configuradas para que também possa ser utilizadas sem esse arquivo.
 
 ---
 
@@ -102,42 +104,41 @@ A API consta com 2 rotas:
 ## Desenvolvimento
 
 ---
-Durante o desenvolvimento do front end (client), no envio para a inserção de novas respostas, foi decidido utilizar o dado que retorna desta inserção utilizando o método POST. Sendo utilizados os dados para serem exibidos na renderização das quantidades de respostas.
+Durante o desenvolvimento do `front end` (client), no envio para a inserção de novas respostas, foi decidido utilizar o dado que retorna desta inserção utilizando o método `POST`. Sendo utilizados os dados para serem exibidos na renderização das quantidades de respostas.
 
 ### Tecnologias
 
 ---
 
-Inicialmente foi utilizado Node.js com Mongoose, depois React.js e React Bootstrap.
+Inicialmente foi utilizado `Node.js` com `Mongoose`, depois `React.js` e `React Bootstrap`.
 
 ---
 
 ### Banco de dados
 
-Foi utilizado o MongoDB pela fácil inserção e extração de dados.
+Foi utilizado o `MongoDB` pela fácil inserção e extração de dados.
 
 ---
 
 ## Etapas Desafiadoras
 
 Tive pouca dificuldade em back end. No começo comecei a desenvolver um código pensando não só em uma lógica em que fosse necessário armazenar a quantidade de cada resposta enviada, mas considerando um banco de dados inicialmente já preenchido. Logo após mudei o código, tendo em vista que não é necessário fazer busca no banco de dados para depois fazer a inserção das novas respostas com suas quantidades acumuladas.
-No front end tive uma certa dificuldade em alguns pontos. O primeiro foi nao conseguir setar um valor quando era direcionado a página de respostas. Devido ao fato de que me propus a utilizar hooks para setar as respostas e utilizar o mesmo botão que o chama como call back também para direcionar para outra página com o <Navigate /> (React Router Dom v6) tive dificuldade em armazenar os dados. Após notar que tão cedo não conseguiria uma solução com o <Navigate/>, entendi que para o contexto seria bom aplicar uma renderização condicional, não sendo necessário o uso do Navigate.
-Foram feitos também desenvolvidos testes utilizando Jest.
+No front end tive uma certa dificuldade em alguns pontos. O primeiro foi nao conseguir setar um valor quando era direcionado a página de respostas. Devido ao fato de que me propus a utilizar hooks para setar as respostas e utilizar o mesmo botão que o chama como call back também para direcionar para outra página com o `<Navigate />` (React Router Dom v6) tive dificuldade em armazenar os dados. Após notar que tão cedo não conseguiria uma solução com o `<Navigate/>`, entendi que para o contexto seria bom aplicar uma `renderização condicional`, não sendo necessário o uso do `Navigate`.
+Foram feitos também desenvolvidos testes utilizando `Jest`.
 
 ## Etapas Ausentes ou que precisam ser melhoradas
 
-* Precisa ser feitos mais Testes TDD
 * Refatoração do código e organização das mensagem de erro
-* Criação de mais validadores no back end
+* Criação de mais validadores no `back end`
 * Correção de espaçamento e cores na estilização
 
 
 ## Próximos passos
 
-* Implementação de testes no Front End e no Back End
-* Treinar mais a aplicação do <Navigate/> ao setar valor
-* Implementação de Token de acesso e login
-* Deploy no Heroku
+* Precisam ser feitos mais Testes `TDD`
+* Treinar mais a aplicação do `<Navigate/>` ao setar valor
+* Implementação de `Token` de acesso e `login`
+* Deploy no `Heroku`
 
 
 ---
