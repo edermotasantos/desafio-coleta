@@ -69,7 +69,9 @@ Para que seja feito o cálculo em cada chave adequada é necessário considerar 
 * `React.js`(Context API e React Hooks)
 * `CSS`
 * `HTML`
-* `React Bootstrap`.
+* `React Bootstrap`
+
+## Desenvolvimento
 
 O desenvolvimento da aplicação foi feito no `VSCODE`, inicialmente trabalhado o `back end` através do `Node.js` com `Mongoose`. Foi utilizado o `POSTMAN` para testar se a a aplicação estava populando corretamente e o `MongoDB Compass` para visualizar o banco de dados. Logo após foi criada uma função para o preenchimento de um arquivo `.txt` de modo a atender os requisitos inicias.
 No `front end` me propus a trabalhar com `React` (`Context API` e `React Hooks`) para o desenvolvimento das funções, renderização e a estilização da página ficou por conta do `react bootstrap`.
