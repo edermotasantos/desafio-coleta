@@ -131,7 +131,7 @@ Foram feitos também desenvolvidos testes utilizando `Jest`.
 
 ## Etapas Ausentes ou que precisam ser melhoradas
 
-* Refatoração do código e organização das mensagem de erro
+* Refatoração do código e organização das mensagens de erro
 * Criação de mais validadores no `back end`
 * Correção de espaçamento e cores na estilização
 
