@@ -12,7 +12,7 @@ const routes = require('./src/routes/routes');
 
 const PORT = process.env.PORT || 3001;
 
-const mongoDbUrl = `mongodb://${process.env.HOSTNAME || 'mongodb'}:27017/desafio-coleta`;
+const mongoDbUrl = `mongodb://${process.env.HOSTNAME || 'localhost'}:27017/desafio-coleta`;
 
 mongoose.connect(mongoDbUrl, (error) => {
   if (error) console.log(error);
