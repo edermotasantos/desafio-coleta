@@ -115,7 +115,18 @@ Durante o desenvolvimento do `front end` (client), no envio para a inserção de
 
 ---
 
-Inicialmente foi utilizado `Node.js` com `Mongoose`, depois `React.js` e `React Bootstrap`.
+## Back End
+
+* `Node.js`
+* `Mongoose`
+* `MongoDB`
+
+## Front End
+
+* `React.js`
+* `CSS`
+* `HTML`
+* `React Bootstrap`.
 
 ---
 
