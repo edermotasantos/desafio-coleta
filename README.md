@@ -147,7 +147,7 @@ Foram feitos também desenvolvidos testes utilizando `Jest`.
 
 ## Próximos passos
 
-* Precisam ser feitos mais Testes `TDD`
+* Implementar mais Testes
 * Treinar mais a aplicação do `<Navigate/>` ao setar valor
 * Implementação de `Token` de acesso e `login`
 * Deploy no `Heroku`
