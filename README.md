@@ -54,11 +54,24 @@ Para que seja feito o cálculo em cada chave adequada é necessário considerar 
 - Em `QuantidadeNaoAvaliada` é contabilizada a quantidade `"Não Sei"` como resposta não avaliada
 
 
-## Stacks utilizadas para o desenvolvimento:
-- Node.js
-- Mongoose
-- React.js (Context API e React Hooks)
-- React Bootstrap
+### Tecnologias
+
+---
+
+## Back End
+
+* `Node.js`
+* `Mongoose`
+* `MongoDB`
+
+## Front End
+
+* `React.js`(Context API e React Hooks)
+* `CSS`
+* `HTML`
+* `React Bootstrap`
+
+## Desenvolvimento
 
 O desenvolvimento da aplicação foi feito no `VSCODE`, inicialmente trabalhado o `back end` através do `Node.js` com `Mongoose`. Foi utilizado o `POSTMAN` para testar se a a aplicação estava populando corretamente e o `MongoDB Compass` para visualizar o banco de dados. Logo após foi criada uma função para o preenchimento de um arquivo `.txt` de modo a atender os requisitos inicias.
 No `front end` me propus a trabalhar com `React` (`Context API` e `React Hooks`) para o desenvolvimento das funções, renderização e a estilização da página ficou por conta do `react bootstrap`.
@@ -111,12 +124,6 @@ A API consta com 2 rotas:
 ---
 Durante o desenvolvimento do `front end` (client), no envio para a inserção de novas respostas, foi decidido utilizar o dado que retorna desta inserção utilizando o método `POST`. Sendo utilizados os dados para serem exibidos na renderização das quantidades de respostas.
 
-### Tecnologias
-
----
-
-Inicialmente foi utilizado `Node.js` com `Mongoose`, depois `React.js` e `React Bootstrap`.
-
 ---
 
 ### Banco de dados
@@ -140,7 +147,7 @@ Foram feitos também desenvolvidos testes utilizando `Jest`.
 
 ## Próximos passos
 
-* Precisam ser feitos mais Testes `TDD`
+* Implementar mais Testes
 * Treinar mais a aplicação do `<Navigate/>` ao setar valor
 * Implementação de `Token` de acesso e `login`
 * Deploy no `Heroku`
