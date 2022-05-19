@@ -97,7 +97,12 @@ function Questions() {
   return (
     <Form>
       <div>
-        <Form.Label className="first-question" style={{marginLeft: 25, marginRight: 2}}>{"\n"}1 - Você se considera bom de lógica?{"\n"}</Form.Label>
+        <Form.Label
+          className="first-question"
+          style={{marginLeft: 25, marginRight: 2}}
+        >
+          {"\n"}1 - Você se considera bom de lógica?{"\n"}
+        </Form.Label>
         <div>
           <Button
             variant="primary"
@@ -126,7 +131,10 @@ function Questions() {
         </div>
       </div>
         <div  className="d-grid gap-2">
-          <Form.Label className="other-questions" style={{marginLeft: 25, marginRight: 2}}>2 - Gosta de aprender com desafios?</Form.Label>
+          <Form.Label
+            className="other-questions"
+            style={{marginLeft: 25, marginRight: 2}}
+          >2 - Gosta de aprender com desafios?</Form.Label>
           <div>
             <Button
               variant="primary"
@@ -157,7 +165,12 @@ function Questions() {
           </div>
         </div>
         <div className="d-grid gap-2">
-          <Form.Label className="other-questions" style={{marginLeft: 25, marginRight: 2}}>3 - Gostaria de fazer parte da GRX?</Form.Label>
+          <Form.Label
+            className="other-questions"
+            style={{marginLeft: 25, marginRight: 2}}
+          >
+            3 - Gostaria de fazer parte da GRX?
+          </Form.Label>
           <div>
             <Button
               variant="primary"
@@ -214,8 +227,16 @@ function Questions() {
           </div>
         </div>
         <div>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label className="other-questions" style={{marginLeft: 25, marginRight: 2}}>4 - Por favor, justifique a resposta anterior</Form.Label>
+          <Form.Group
+            className="mb-3"
+            controlId="exampleForm.ControlTextarea1"
+          >
+            <Form.Label
+              className="other-questions"
+              style={{marginLeft: 25, marginRight: 2}}
+            >
+              4 - Por favor, justifique a resposta anterior
+            </Form.Label>
             <Form.Control
               style={{height: 80, marginLeft: 25, marginRight: 2, width: 905}}
               as="textarea"
