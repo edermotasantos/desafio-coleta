@@ -10,9 +10,9 @@ function AddAnswers() {
   } = useContext(CollectContext);
 
   return (
-    <>
+    <div class="forms-container">
       {home ? <Questions/> : <Answers />}
-    </>
+    </div>
   );
 }
 

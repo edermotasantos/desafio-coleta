@@ -1,1 +1,1 @@
-[{"_id":"6282f25a5be6587852b044b4","Pergunta1":"Sim","Pergunta2":"Sim","Pergunta3":"Sim","Pergunta4":"hhhhhhhhhhhhhhhhhh","QuantidadePositiva":3,"QuantidadeNegativa":0,"QuantidadeNaoAvaliada":0}]
+[{"Pergunta1":"","Pergunta2":"","Pergunta3":"","Pergunta4":"s","QuantidadePositiva":0,"QuantidadeNegativa":0,"QuantidadeNaoAvaliada":0}]
