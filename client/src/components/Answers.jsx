@@ -9,18 +9,15 @@ import Col from 'react-bootstrap/Col';
 function Answers() {
   const {
     amount,
-    home,
     setHome,
     setCount,
     setFewCharacters,
   } = useContext(CollectContext);
 
   const redirectToAnswers = () => {
-    console.log('o valor de home é', home);
     setHome((prevState) => {
       return !prevState;
     });
-    console.log('o valor de home é', home);
   }
 
   return (

@@ -1,6 +1,15 @@
+* {
+  font-family: inter, sans-serif;
+}
+
 .forms-container {
-  width: 950px;
-  margin: auto;
+  flex-wrap: nowrap;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .counter {
@@ -22,4 +31,8 @@
 
 .other-questions {
   margin-top: 30px;
+}
+
+.banner {
+  width: 450px;
 }
