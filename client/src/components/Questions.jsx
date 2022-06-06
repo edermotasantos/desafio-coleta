@@ -35,12 +35,19 @@ function Questions() {
     return data;
   }
 
-  const setNewAmout = async (data) => {
-    const { QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada } = data;
+  const percentageCalculation = (QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada) => {
     const Total = QuantidadePositiva + QuantidadeNegativa + QuantidadeNaoAvaliada;
     const PorcentagemPositiva = (((QuantidadePositiva / Total) * 100).toFixed(2)) + '%';
     const PorcentagemNegativa = (((QuantidadeNegativa / Total) * 100).toFixed(2)) + '%';
     const PorcentagemNaoAvaliada = (((QuantidadeNaoAvaliada / Total) * 100).toFixed(2)) + '%';
+    const percentage = { PorcentagemPositiva, PorcentagemNegativa, PorcentagemNaoAvaliada, Total };
+    return percentage;
+  }
+
+  const setNewAmout = async (data) => {
+    const { QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada } = data;
+    const percentage = percentageCalculation(QuantidadePositiva, QuantidadeNegativa, QuantidadeNaoAvaliada);
+    const { PorcentagemPositiva, PorcentagemNegativa, PorcentagemNaoAvaliada, Total } = percentage;
     await setAmount((prevState) => {
       return {
         ...prevState,
