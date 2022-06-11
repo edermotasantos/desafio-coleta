@@ -13,7 +13,7 @@ function AddAnswers() {
   return (
     <div className="home-container">
       <img className="banner" alt="banner" src={imagem} />
-      <div class="forms-container">
+      <div className="forms-container">
         {home ? <Questions/> : <Answers />}
       </div>
     </div>
