@@ -63,10 +63,11 @@ Para que seja feito o cálculo em cada chave adequada é necessário considerar 
 * `Node.js`
 * `Mongoose`
 * `MongoDB`
+* `Jest`
 
 ## Front End
 
-* `React.js`(Context API e React Hooks)
+* `React.js`(Context API e Hooks)
 * `CSS`
 * `HTML`
 * `React Bootstrap`
